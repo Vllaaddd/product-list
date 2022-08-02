@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Tasks</title>
+		<title>Список</title>
 		<link rel="stylesheet" href="style.css">
 	</head>
-	<body>
-		<h1>Tasks</h1>
-		<ul id="tasks">
-			
-		</ul>
+	<body class="body">
+		<h1>Список</h1>
+		
 		<form>
-			<input type="text" id="task" placeholder="New task">
-			<input id="submit" type="submit">
+			<input autofocus type="text" id="task" placeholder="..." autocomplete="off">
+			<button id="submit">Додати</button>
+			<button id="delete">Видалити список</button>
 		</form>
+		
 
-
-        <script src="./script.js"></script>
+		<ul id="tasks">
+		</ul>
+        
+		<script src="./script.js"></script>
 	</body>
 </html>
