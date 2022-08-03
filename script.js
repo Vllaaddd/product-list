@@ -11,14 +11,19 @@ document.addEventListener('DOMContentLoaded', function(){
     
     }
 
-    document.querySelector('form').onsubmit = () => {
+    document.querySelector('#submit').onclick = () => {
 
+        const li = document.createElement('li');
         const labelElement = document.createElement('label'),
-        inputElement = document.createElement('input');
-        spanElement = document.createElement('span');
+        inputElement = document.createElement('input'),
+        spanElement = document.createElement('span'),
+        pElement = document.createElement('p');
 
         inputElement.type = "checkbox";
         spanElement.classList.add("checkbox");
+        pElement.classList.add('pElement');
+        li.classList.add("task-li");
+        labelElement.classList.add('label');
 
         labelElement.appendChild(inputElement);
         labelElement.appendChild(spanElement);
@@ -27,10 +32,9 @@ document.addEventListener('DOMContentLoaded', function(){
         const deleteButton = document.querySelector('#delete');
         const task = document.querySelector('#task').value;
 
-        const li = document.createElement('li');
-        li.innerHTML = task;
-        li.classList.add("task-li");
+        pElement.innerHTML = task;
         li.appendChild(labelElement);
+        li.appendChild(pElement);
 
         document.querySelector('#tasks').append(li);
 
@@ -39,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
         deleteButton.addEventListener('click', () => {
             document.querySelector('#tasks').removeChild(li);
-            labelElement.style.display = "none";
+            labelElement.classList.remove('label');
         })
 
         return false;
